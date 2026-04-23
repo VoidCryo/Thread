@@ -1,11 +1,120 @@
 @import 'tailwindcss';
+@import "starting-point-ui";
+@import "remixicon/fonts/remixicon.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/fonts/HarmonyOS_Sans_Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/fonts/HarmonyOS_Sans_Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'HarmonyOS Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.145 0.008 326);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0.008 326);
+  --card-border: oklch(0.922 0.005 325.62);
+  --card-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0.008 326);
+  --popover-border: oklch(0.922 0.005 325.62);
+  --popover-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --secondary: oklch(0.96 0.003 325.6);
+  --secondary-foreground: oklch(0.212 0.019 322.12);
+  --muted: oklch(0.96 0.003 325.6);
+  --muted-foreground: oklch(0.542 0.034 322.5);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.922 0.005 325.62);
+  --input: oklch(1 0 0 / 0%);
+  --input-foreground: oklch(0.145 0.008 326);
+  --input-placeholder: oklch(0.542 0.034 322.5);
+  --input-border: oklch(0.922 0.005 325.62);
+  --input-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ring: oklch(0.711 0.019 323.02);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0.008 326);
+  --sidebar-primary: oklch(0.212 0.019 322.12);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.96 0.003 325.6);
+  --sidebar-accent-foreground: oklch(0.212 0.019 322.12);
+  --sidebar-border: oklch(0.922 0.005 325.62);
+  --sidebar-ring: oklch(0.711 0.019 323.02);
+  --btn: oklch(1 0 0);
+  --btn-foreground: oklch(0.145 0.008 326);
+  --btn-border: oklch(0.922 0.005 325.62);
+  --btn-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --track: oklch(0.922 0.005 325.62);
+  --thumb: oklch(1 0 0);
+  --primary: oklch(0.609 0.126 221.723);
+  --primary-foreground: oklch(0.984 0.019 200.873);
+  --accent: oklch(0.588 0.158 241.966);
+  --accent-foreground: oklch(0.977 0.013 236.62);
+  --btn-radius: 0.5rem;
+  --badge-radius: 9999px;
+  --input-radius: 0.5rem;
+  --card-radius: 0.875rem;
+  --popover-radius: 0.5rem;
+  --font-body: "HarmonyOS Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "HarmonyOS Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --background: oklch(0.145 0.008 326);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.212 0.019 322.12);
+  --card-foreground: oklch(0.985 0 0);
+  --card-border: oklch(1 0 0 / 10%);
+  --card-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --popover: oklch(0.212 0.019 322.12);
+  --popover-foreground: oklch(0.985 0 0);
+  --popover-border: oklch(1 0 0 / 10%);
+  --popover-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --secondary: oklch(0.263 0.024 320.12);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.263 0.024 320.12);
+  --muted-foreground: oklch(0.711 0.019 323.02);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 4.5%);
+  --input-foreground: oklch(0.985 0 0);
+  --input-placeholder: oklch(0.711 0.019 323.02);
+  --input-border: oklch(1 0 0 / 15%);
+  --input-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ring: oklch(0.542 0.034 322.5);
+  --sidebar: oklch(0.212 0.019 322.12);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.922 0.005 325.62);
+  --sidebar-primary-foreground: oklch(0.212 0.019 322.12);
+  --sidebar-accent: oklch(0.263 0.024 320.12);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.542 0.034 322.5);
+  --btn: oklch(1 0 0 / 4.5%);
+  --btn-foreground: oklch(0.985 0 0);
+  --btn-border: oklch(1 0 0 / 15%);
+  --btn-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --track: oklch(1 0 0 / 12%);
+  --thumb: oklch(1 0 0);
+  --primary: oklch(0.715 0.143 215.221);
+  --primary-foreground: oklch(0.984 0.019 200.873);
+  --accent: oklch(0.685 0.169 237.323);
+  --accent-foreground: oklch(0.977 0.013 236.62);
 }
