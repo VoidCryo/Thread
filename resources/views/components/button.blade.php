@@ -1,11 +1,17 @@
 @props([
-'type' => 'text'
+    'type' => 'button',
+    'variant' => 'primary',
+    'size' => 'base',
+    'icon' => null,
 ])
 
-<div>
-    <button type="{{ $type }}"
-
-    class="bg-cyan-500 rounded-sm px-2 active:bg-cyan-50 active:text-cyan-950"
-
-    >{{ $slot }}</button>
-</div>
+<button
+    {{ $attributes->merge(['class' => 'btn btn-' . $variant . ($size ? ' btn-' . $size : '')]) }}
+    type="{{ $type }}">
+    @if ($icon)
+        <i class="ri-{{ $icon }}"></i>
+    @endif
+    @if ($size != 'icon')
+        {{ $slot }}
+    @endif
+</button>
