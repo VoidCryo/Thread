@@ -12,19 +12,13 @@
             document.documentElement.classList.toggle('dark', e.matches)
         })
     </script>
-    <title>{{ $title ?? 'auth' }}</title>
+    <title>{{ $title ?? 'home' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-background min-h-screen">
-<main class="min-h-screen md:grid md:grid-cols-2">
-    <div class="hidden md:block">
-
-    </div>
-
-    <div {{ $attributes->merge(['class' => 'flex items-center justify-center min-h-screen px-5 py-10 md:px-16 md:py-20']) }}>
-        <div class="w-full max-w-sm">
-            {{ $slot }}
-        </div>
+<main class="min-h-screen">
+    <div class="">
+        {{ $slot }}
     </div>
     <x-scripts.toast />
 </main>

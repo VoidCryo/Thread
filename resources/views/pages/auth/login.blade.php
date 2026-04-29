@@ -1,27 +1,20 @@
-<x-layouts.auth :title="'Register'">
+<x-layouts.auth :title="'Login'">
     <x-card>
         <div class="flex flex-col gap-5">
             <div>
-                <h2 class="text-xl font-semibold leading-tight">Buat Akun Baru</h2>
+                <h2 class="text-xl font-semibold leading-tight">Login ke Akun</h2>
                 <p class="text-sm text-muted-foreground mt-1">
-                    Isi data di bawah untuk membuat akun anda
+                    Isi data di bawah untuk masuk ke dalam akun
                 </p>
             </div>
-
             <div class="separator" role="separator"></div>
-
-            <form class="flex flex-col gap-4" method="POST" action="{{ route('auth.store') }}">
+            <form class="flex flex-col gap-4" method="POST" action="{{ route('auth.login') }}">
                 @csrf
-                <x-input
-                    id="name"
-                    label="Nama Akun"
-                    desc="Nama yang akan ditampilkan di profil"
-                    :error="$errors->first('name')" />
                 <x-input
                     id="email"
                     type="email"
                     label="Email"
-                    desc="Gunakan email aktif kamu"
+                    desc="Masukan email akunmu"
                     :error="$errors->first('email')" />
                 <x-input
                     id="password"
@@ -29,14 +22,15 @@
                     label="Password"
                     desc="Minimal 8 karakter"
                     :error="$errors->first('password')" />
+
                 <div class="flex items-center justify-between gap-3 pt-1">
-                    <a href="{{ route('auth.index') }}"
+                    <a href="{{ route('auth.create') }}"
                        class="btn btn-ghost btn-sm gap-2">
-                        <i class="ri-arrow-go-back-line"></i>
-                        Kembali
+                        <i class="ri-user-add-line"></i>
+                        Register
                     </a>
                     <x-button type="submit" icon="send-plane-line">
-                        Register
+                        Login
                     </x-button>
                 </div>
             </form>
